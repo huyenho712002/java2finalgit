@@ -1,0 +1,10 @@
+1,PS001,Nguyen Bao Anh,1983/06/03,10 Phan Chu Trinh,905987678,2021/10/15,2021/10/31,Lap trinh vien,,,,
+2,PS002,Pham Anh Minh,2018/05/02,11 Phan Chu Trinh,906789234,2021/10/16,2021/10/31,,ABC,Mam Non,,
+3,PS003,Le Duong Phuc,1975/10/03,12 Phan Chu Trinh,906789235,2021/10/20,2021/10/31,,,,20 tuan,No
+1,PS004,Tran Cong Minh,1972/04/04,13 Phan Chu Trinh,906789236,2021/10/16,2021/10/31,NV van phong,,,,
+2,PS005,Tran Dinh Nghia,2015/07/08,14 Phan Chu Trinh,906789237,2021/10/20,2021/10/31,,Tran Dai Nghia,Lop 1,,
+3,PS006,Tran Gia Bao,1980/03/15,15 Phan Chu Trinh,906789238,2021/10/15,2021/10/20,,,,30 tuan,No
+1,PS007,Nguyen Minh Phuong,1979/06/07,16 Phan Chu Trinh,906789239,2021/10/16,2021/10/20,NV van phong,,,,
+2,PS008,Pham Ba Chau,2017/04/05,17 Phan Chu Trinh,906789240,2021/10/20,2021/10/20,,Huong Sen,Mam Non,,
+3,PS009,Tran Nhu Thu,1970/06/09,18 Phan Chu Trinh,906789241,,2021/10/25,,,,10 tuan,Yes
+1,PS010,Nguyen Thi Thuy,1989/04/02,19 Phan Chu Trinh,906789242,2021/10/17,2021/10/25,NV van phong,,,,
