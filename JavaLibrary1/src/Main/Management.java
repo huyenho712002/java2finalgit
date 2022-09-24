@@ -1,51 +1,53 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Main;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import entities.Children;
 import entities.Adult;
+import entities.Children;
 import entities.Passenger;
 import entities.Pregnant;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.util.ArrayList;
-import java.util.List;
-import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import CreateConnect.CreateConnect;
+
 /**
  *
  * @author ADMIN
  */
-public class readfile {
+
+public class Management {
     private static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private static String dburl = "jdbc:sqlserver://localhost:1433; database = FightManager;encrypt=true";
+    private static String dburl = "jdbc:sqlserver://localhost:1433; database =FightManager;"
+            + "trustServerCertificate=true";
     private static String userName = "sa";
     private static String password = "123456";
-     
+    
     public static void main(String[] args) {
-           List<Passenger> listPassenger = new ArrayList<Passenger>();
-           listPassenger = readFile();
-          
-        for(Passenger listpassenger :listPassenger){
-            if( listPassenger instanceof Adult){
-                insertAdult((Adult)listpassenger);
-                 
-//                ((Adult)listPassenger).ShowInfo();
+        List<Passenger> listPass = new ArrayList<Passenger>();
+        listPass = readFile();
+        for (Passenger pass : listPass) {
+            if (pass instanceof Adult) {
+                insertAdult((Adult) pass);
+//                ((Adult) pass).showInfor();
             }
-            if(listPassenger instanceof Children){
-                insertChildren(((Children)listPassenger));
+            if (pass instanceof Children) {
+                insertChildren((Children)pass);
             }
-            if(listPassenger instanceof Pregnant){
-                insertPregnant(((Pregnant)listPassenger));
+            if (pass instanceof Pregnant) {
+                insertPregant((Pregnant) pass);
+//                ((Pregnant) pass).showInfor();
             }
-            
         }
     }
-   
-    public static List<Passenger> readFile(){
+    
+public static List<Passenger> readFile() {
         List<Passenger> list = new ArrayList<>();
         String path = "D:\\New folder2\\Java2-final\\File\\PassengerFile.txt";
         String line;
@@ -76,13 +78,11 @@ public class readfile {
                 passenger.setAddress(passengerArrray[4]);
                 passenger.setPhone(passengerArrray[5]);
                 passenger.setTestDate(passengerArrray[6]);
-                System.out.println("hi");;
                 passenger.setFlightDate(passengerArrray[7]);
                 list.add(passenger);
             }
         } catch (Exception e) {
             e.printStackTrace();
-            
         }
         return list;
     }
@@ -131,7 +131,7 @@ public class readfile {
             ex.printStackTrace();
         }
     }
-    public static void insertPregnant(Pregnant pregnant) {
+    public static void insertPregant(Pregnant pregnant) {
         Connection connection = null;
         try {
             connection = CreateConnect.createConnection(driver, dburl, userName, password);
@@ -154,16 +154,6 @@ public class readfile {
             ex.printStackTrace();
         }
     }
+
    
-//    private static Connection createConnection(String driver, String dburl, String userName, String password) {
-//        createConnection(driver, dburl, userName, password);
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
 }
-           
-
-
-
-
-
-
