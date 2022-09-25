@@ -26,7 +26,7 @@ import CreateConnect.CreateConnect;
  */
 public class readfile {
     private static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private static String dburl = "jdbc:sqlserver://localhost:1433; database = FightManager;encrypt=true;trustServerPassenger=true;responseBuffering=full;";
+    private static String dburl = "jdbc:sqlserver://localhost:1433;databaseName = FightManager;encrypt=true;trustServerCertificate=true;";
     private static String userName = "sa";
     private static String password = "123456";
      
@@ -163,7 +163,12 @@ public class readfile {
             preparedStatement.setString(6, pregnant.getTestDate());
             preparedStatement.setString(7, pregnant.getFlightDate());
             preparedStatement.setString(8, pregnant.getGestationalAge());
-            preparedStatement.setString(9, pregnant.getPretermBirth());
+            if(pregnant.getPretermBirth().equals("Yes")){
+                 preparedStatement.setString(9,"1");
+            }else {
+                 preparedStatement.setString(9,"0");
+            }
+           
             preparedStatement.executeUpdate();
             System.out.println("Insert thành công record vào table Passenger!!");
         } catch (SQLException ex) {
