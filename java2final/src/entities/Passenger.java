@@ -13,7 +13,7 @@ public abstract class  Passenger  {
     private String phone;
     private String testDate;
     private String flightDate;
-    private List<Passenger> listPassenger;
+    public List<Passenger> listPassenger;
 
     public List<Passenger> getListPassenger() {
         return listPassenger;
